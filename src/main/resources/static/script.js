@@ -5,6 +5,7 @@ function askName() {
 
 function submitName() {
   const name = document.getElementById("nameInput").value.trim();
+  const crushName = document.getElementById("crushName").value.trim();
   const responseDiv = document.getElementById("response");
 
   if (name === "") {
@@ -13,11 +14,13 @@ function submitName() {
   }
 
   fetch("https://redesign-mtbs.onrender.com/entering", {
+	//fetch("http://localhost:8082/entering", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: `name=${encodeURIComponent(name)}`
+    body: `name=${encodeURIComponent(name)}
+	&crushName=${encodeURIComponent(crushName)}`
   })
 
     .then(res => res.text())
