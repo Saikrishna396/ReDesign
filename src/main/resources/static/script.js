@@ -12,7 +12,7 @@ function submitName() {
     return;
   }
 
-  fetch("http://localhost:8080/entering", {
+  fetch("https://redesign-mtbs.onrender.com/entering", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
