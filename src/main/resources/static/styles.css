@@ -1,0 +1,193 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: url('nature-background.jpg') no-repeat center center/cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h2.welcome {
+  font-size: 32px;
+  font-family: 'Brush Script MT', cursive;
+  padding: 15px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: hotpink;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-shadow: 1px 1px 3px #fff;
+}
+
+h2.welcome:hover {
+  transform: scale(1.05);
+  color: #ff66cc;
+  text-shadow: 2px 2px 8px #fff;
+}
+h2.welcome:hover {
+  transform: scale(1.05);
+  color: #ff66cc;
+  text-shadow: 2px 2px 8px #fff;
+}
+
+.touch-btn {
+  margin-top: 40px;
+  padding: 14px 28px;
+  font-size: 20px;
+  background: linear-gradient(to right, #ff99cc, #ff66cc);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+}
+
+.touch-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+}
+
+.input-box {
+  margin-top: 20px;
+}
+
+.input-box input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.input-box button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #ff1493;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.response-box.active {
+  font-size: 36px;
+  animation: glow 2s ease-in-out infinite alternate;
+  transition: opacity 0.5s ease-in;
+  opacity: 1;
+}
+
+.response-box {
+  opacity: 0;
+}
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: yellow;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3) translate(0px, -50px);
+    opacity: 0;
+  }
+}
+.firework-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+
+
+
+.butterfly {
+  position: absolute;
+  width: 60px;
+  animation: flyUpDown 15s ease-in-out infinite;
+}
+
+@keyframes flyUpDown {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(200px, -100px) rotate(20deg);
+  }
+  50% {
+    transform: translate(500px, 100px) rotate(-20deg);
+  }
+  75% {
+    transform: translate(800px, -50px) rotate(10deg);
+  }
+  100% {
+    transform: translate(1000px, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: floatHeart 4s ease-in-out forwards;
+  opacity: 0.8;
+  z-index: 1000;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -10px;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(1) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(0.5) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+
+/* Multiple butterflies with different delays */
+.b1 { top: 10%; left: -60px; animation-delay: 0s; }
+.b2 { top: 30%; left: -60px; animation-delay: 3s; }
+.b3 { top: 50%; left: -60px; animation-delay: 6s; }
+.b4 { top: 70%; left: -60px; animation-delay: 9s; }
